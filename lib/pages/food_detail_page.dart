@@ -63,7 +63,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       ),
                       const SizedBox(width: 14),
 
-                      // Judul, tahun, genre, rating
+                      // Info makanan
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,7 +156,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     ),
                     onChanged: (value) {
                       setState(() {
-                        quantity = int.tryParse(value) ?? 1;
+                        quantity = int.tryParse(value) ?? 0;
                         totalPrice = widget.food.harga * quantity;
                       });
                     },
@@ -193,8 +193,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       }
                     },
                     child: Container(
+                      // width: double.infinity,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
+                        horizontal: 110,
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
@@ -202,7 +203,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const Text(
-                        "Pesan",
+                        "Checkout",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,

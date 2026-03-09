@@ -11,12 +11,17 @@ class FoodListPage extends StatefulWidget {
 }
 
 class _FoodListPageState extends State<FoodListPage> {
-  String get username {
+  late String username;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     final route = ModalRoute.of(context);
     if (route != null && route.settings.arguments != null) {
-      return route.settings.arguments as String;
+      username = route.settings.arguments as String;
+    } else {
+      username = "User";
     }
-    return "User";
   }
 
   @override
