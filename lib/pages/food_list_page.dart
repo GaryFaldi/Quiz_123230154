@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/food_model.dart';
 import 'food_detail_page.dart';
+// import 'login_page.dart';
 
 class FoodListPage extends StatefulWidget {
   const FoodListPage({super.key});
@@ -10,11 +11,19 @@ class FoodListPage extends StatefulWidget {
 }
 
 class _FoodListPageState extends State<FoodListPage> {
+  String get username {
+    final route = ModalRoute.of(context);
+    if (route != null && route.settings.arguments != null) {
+      return route.settings.arguments as String;
+    }
+    return "User";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Selamat Datang di Find Food App 154"),
+        title: Text("Selamat Datang di Find Food App 154, $username"),
         actions: [Stack(alignment: Alignment.center)],
       ),
       body: ListView.builder(

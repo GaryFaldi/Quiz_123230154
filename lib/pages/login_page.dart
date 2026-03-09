@@ -12,7 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String? _errorMessage;
-
+  String get username => _usernameController.text.trim();
   void _login() {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim();
@@ -28,7 +28,10 @@ class _LoginPageState extends State<LoginPage> {
       setState(() => _errorMessage = null);
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const FoodListPage()),
+        MaterialPageRoute(
+          builder: (_) => const FoodListPage(),
+          settings: RouteSettings(arguments: username),
+        ),
       );
     } else {
       setState(() => _errorMessage = "Username atau password salah.");

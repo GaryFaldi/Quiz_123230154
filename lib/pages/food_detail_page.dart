@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/food_model.dart';
-// import '../models/watchlist_model.dart';
-// import 'watchlist_page.dart';
 
 class FoodDetailPage extends StatefulWidget {
   final FoodModel food;
