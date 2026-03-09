@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'food_list_page.dart';
+import 'food_list_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,10 +26,10 @@ class _LoginPageState extends State<LoginPage> {
 
     if (username == "GaryFaldi" && password == "154") {
       setState(() => _errorMessage = null);
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (_) => const FoodListPage()),
-      // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const FoodListPage()),
+      );
     } else {
       setState(() => _errorMessage = "Username atau password salah.");
     }
